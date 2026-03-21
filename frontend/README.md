@@ -1,16 +1,47 @@
-# React + Vite
+# Employee Performance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application for tracking and visualizing employee KPIs and performance metrics.
 
-Currently, two official plugins are available:
+## Live Demo
+- Frontend: https://perf-dashboard-ui.onrender.com
+- API Docs: https://performance-dashboard-api.onrender.com/docs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- **Backend**: Python, FastAPI, SQLAlchemy, PostgreSQL
+- **Frontend**: React, Vite, Recharts, Axios
+- **Auth**: JWT (JSON Web Tokens)
+- **Deployment**: Render.com
 
-## React Compiler
+## Features
+- Manager authentication with JWT
+- Add and manage employees
+- Log KPIs with targets vs actuals
+- Auto-computed performance scores
+- Performance charts and insights
+- Fully responsive — works on any device
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Setup
 
-## Expanding the ESLint configuration
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+python -m uvicorn main:app --reload
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /auth/register | Register manager |
+| POST | /auth/login | Login |
+| POST | /employees/ | Add employee |
+| GET | /employees/ | List employees |
+| POST | /kpis/ | Log KPI |
+| GET | /kpis/insights/{id} | Get performance insights |

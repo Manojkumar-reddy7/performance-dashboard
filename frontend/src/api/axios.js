@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: '/',
+  baseURL: 'https://performance-dashboard-api.onrender.com',
 });
 
 API.interceptors.request.use((config) => {
